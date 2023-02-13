@@ -1,3 +1,51 @@
 body{
-    background-color: #63372C;
+    background-color: rgb(198, 212, 212);
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
 }
+
+h1{
+  align-self: center;
+}
+
+table {
+    margin: auto;
+    margin-top: 50px;
+    border-collapse: collapse;
+  }
+  
+  td, th {
+    border: 2px solid rgb(182, 196, 196);
+    padding: 10px;
+    
+  }
+  
+  #numberInput {
+    font-size: 18px;
+    width: 300px;
+    padding: 10px;
+    border-radius: 13px;
+    border: none;
+    align-self: center;
+  }
+  
+  #btn {
+    width: 200px;
+    align-self: center;
+    background-color: transparent;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 13px;
+    border: none;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.308);
+  }
+  
+  #btn:hover{
+    transform: scale(1.02);
+    transition: .1s all;
+    background-color: rgb(195, 206, 206);
+
+  }
