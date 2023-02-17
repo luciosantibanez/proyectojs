@@ -37,8 +37,6 @@ mt3 = mt3.toFixed(2)
 
 document.write("Posees $" + plata )
 
-
-
 function cuentaProducto1(){
  
     if ( plata > valorProducto1 ){
@@ -109,19 +107,22 @@ function cuentaProducto3(){
 cuentaProducto3()
 
 if( mt1 > mt2){
-  alert("Tu mejor opcion es el Producto 1")
-  console.log("Tu mejor opcion es el Producto 1")
+  alert("Tu mejor opcion es el Producto 1 con " + mt1 + "m2")
+  document.write("Tu mejor opcion es el Producto 1 con " + mt1 + "m2")
+  console.log("Tu mejor opcion es el Producto 1 con " + mt1 + "m2")
 }
 
 else if( mt1 < mt2 ){
-  alert("Tu mejor opcion es el Producto 2")
-  console.log("Tu mejor opcion es el Producto 2")
+  alert("Tu mejor opcion es el Producto 2 con " + mt2 + "m2")
+  document.write("Tu mejor opcion es el Producto 2 con " + mt2 + "m2")
+  console.log("Tu mejor opcion es el Producto 2 con " + mt2 + "m2")
 
 }
 
 else{
-  alert("Tu mejor opcion es el Producto 3")
-  console.log("Tu mejor opcion es el Producto 3")
+  alert("Tu mejor opcion es el Producto 3 con " + mt3 + "m2")
+  document.write("Tu mejor opcion es el Producto 3 con " + mt3 + "m2")
+  console.log("Tu mejor opcion es el Producto 3 con " + mt3 + "m2")
 }
 
 
