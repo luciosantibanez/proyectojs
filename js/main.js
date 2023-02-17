@@ -14,7 +14,7 @@ alert ("El valor del producto 2 es $" + valorProducto2 + " y tiene " + mtsProduc
 
 alert ("El valor del producto 3 es $" + valorProducto3 + " y tiene " + mtsProducto3 + " m2")
 
-alert("Introduce la cantidad de dinero que posees, y te dire cual producto te combiene por la cantidad de m2")
+alert("Introduce la cantidad de dinero que posees, y te dire cual producto te conviene por la cantidad de m2")
 
 plata = prompt("$")
 
