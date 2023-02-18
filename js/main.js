@@ -105,6 +105,7 @@ function cuentaProducto3(){
 }
 cuentaProducto3()
 
+
 if(plata>=valorProducto1){
   if( mt1 > mt2 || plata<valorProducto2){
     alert("Tu mejor opcion es el Producto 1 con " + mt1 + "m2")
