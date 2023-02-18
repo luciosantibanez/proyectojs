@@ -7,7 +7,6 @@ let mtsProducto1 = 3 * 2
 let mtsProducto2 = 4 * 5
 let mtsProducto3 = 2 * 6
 
-
 alert ("El valor del producto 1 es $" + valorProducto1 + " y tiene " + mtsProducto1 + " m2")
 
 alert ("El valor del producto 2 es $" + valorProducto2 + " y tiene " + mtsProducto2 + " m2")
@@ -16,33 +15,33 @@ alert ("El valor del producto 3 es $" + valorProducto3 + " y tiene " + mtsProduc
 
 alert("Introduce la cantidad de dinero que posees, y te dire cual producto te conviene por la cantidad de m2")
 
-plata = prompt("$")
+do{
+  plata = prompt("$")
+  document.write("Posees $" + plata )
 
-let cociente1 = plata/valorProducto1
-let mt1 = cociente1 * mtsProducto1
+  let cociente1 = plata/valorProducto1
+  let mt1 = cociente1 * mtsProducto1
+  
+  let cociente2 = plata/valorProducto2
+  let mt2 = cociente2 * mtsProducto2
+  
+  let cociente3 = plata/valorProducto3
+  let mt3 = cociente3 * mtsProducto3
+  
+  cociente1 = cociente1.toFixed(0)
+  cociente2 = cociente2.toFixed(0)
+  cociente3 = cociente3.toFixed(0)
 
-let cociente2 = plata/valorProducto2
-let mt2 = cociente2 * mtsProducto2
-
-let cociente3 = plata/valorProducto3
-let mt3 = cociente3 * mtsProducto3
-
-cociente1 = cociente1.toFixed(0)
-cociente2 = cociente2.toFixed(0)
-cociente3 = cociente3.toFixed(0)
-
-mt1 = mt1.toFixed(2)
-mt2 = mt2.toFixed(2)
-mt3 = mt3.toFixed(2)
-
-document.write("Posees $" + plata )
+    mt1 = mt1.toFixed(2)
+    mt2 = mt2.toFixed(2)
+    mt3 = mt3.toFixed(2)
 
 function cuentaProducto1(){
- 
-    if ( plata > valorProducto1 ){
+  
+  if ( plata > valorProducto1 ){
     alert("Puedes comprar " +  cociente1 + " unidades del producto 1, da un total de " + mt1 + " m2");
     console.log("Puedes comprar " +  cociente1 + " unidades del producto 1, da un total de " + mt1 + " m2");
-
+    
     alert(" y tu vuelto es: $" + plata % valorProducto1);
     console.log(" y tu vuelto es: $" + plata % valorProducto1);
     
@@ -106,24 +105,31 @@ function cuentaProducto3(){
 }
 cuentaProducto3()
 
-if( mt1 > mt2){
-  alert("Tu mejor opcion es el Producto 1 con " + mt1 + "m2")
-  document.write("Tu mejor opcion es el Producto 1 con " + mt1 + "m2")
-  console.log("Tu mejor opcion es el Producto 1 con " + mt1 + "m2")
+if(plata>=valorProducto1){
+  if( mt1 > mt2 || plata<valorProducto2){
+    alert("Tu mejor opcion es el Producto 1 con " + mt1 + "m2")
+    document.write("Tu mejor opcion es el Producto 1 con " + mt1 + "m2")
+    console.log("Tu mejor opcion es el Producto 1 con " + mt1 + "m2")
+  }
+
+  else if( plata>=valorProducto2){
+    alert("Tu mejor opcion es el Producto 2 con " + mt2 + "m2")
+    document.write("Tu mejor opcion es el Producto 2 con " + mt2 + "m2")
+    console.log("Tu mejor opcion es el Producto 2 con " + mt2 + "m2")
+
+  }
+  else if(mt3 > mt1 && mt3 > mt2){
+    alert("Tu mejor opcion es el Producto 3 con " + mt3 + "m2")
+    document.write("Tu mejor opcion es el Producto 3 con " + mt3 + "m2")
+    console.log("Tu mejor opcion es el Producto 3 con " + mt3 + "m2")
+  }
+
+  else{
+    alert("No tienes dinero")
+  }
 }
 
-else if( mt1 < mt2 ){
-  alert("Tu mejor opcion es el Producto 2 con " + mt2 + "m2")
-  document.write("Tu mejor opcion es el Producto 2 con " + mt2 + "m2")
-  console.log("Tu mejor opcion es el Producto 2 con " + mt2 + "m2")
-
-}
-
-else{
-  alert("Tu mejor opcion es el Producto 3 con " + mt3 + "m2")
-  document.write("Tu mejor opcion es el Producto 3 con " + mt3 + "m2")
-  console.log("Tu mejor opcion es el Producto 3 con " + mt3 + "m2")
-}
+}while(plata >0)
 
 
 
