@@ -9,12 +9,60 @@
     <title>Tabla multiplicar | proyecto</title>
 </head>
 <body>
-    
+    <h1>Calculadora de productos</h1>
+    <form>
+      <label for="nombre">Nombre cliente</label>
+      <input type="text" id="nombre">
 
-
-
-
-    
+      <label for="plata">Dinero disponible:</label>
+      <input type="number" placeholder="Danos tu dinero" id="plata" name="plata" required>
+      
+      <button type="button" id="botonCalcular">Calcular</button>
+      
+    </form>
+    <table id="productosTabla">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Valor</th>
+          <th>Metros cuadrados</th>
+          <th>Tipo de madera</th>
+          <th>Grosor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Producto 1</td>
+          <td>$7</td>
+          <td>6 m<sup>2</sup></td>
+          <td>mdf</td>
+          <td>0.3</td>
+        </tr>
+        <tr>
+          <td>Producto 2</td>
+          <td>$15</td>
+          <td>20 m<sup>2</sup></td>
+          <td>mdf</td>
+          <td>0.15</td>
+        </tr>
+        <tr>
+          <td>Producto 3</td>
+          <td>$12</td>
+          <td>8 m<sup>2</sup></td>
+          <td>pino</td>
+          <td>0.4</td>
+        </tr>
+        <tr>
+          <td>Producto 4</td>
+          <td>$20</td>
+          <td>20 m<sup>2</sup></td>
+          <td>cedro</td>
+          <td>0.2</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Mejor producto: <span id="mejorProductoTexto"></span></p>
+    <p id="noAlcanza"></p>
     <script src="./js/main.js"></script>
 </body>
 </html>

@@ -29,31 +29,22 @@ const productos = [
   }
   ];
   
-  // referencias
+  // Obtenemos referencias a los elementos relevantes del DOM
   const plataInput = document.getElementById('plata');
   const mejorProductoTexto = document.getElementById('mejorProductoTexto');
   const productosTabla = document.getElementById('productosTabla');
+  const noAlcanza = document.getElementById('noAlcanza');
   const botonCalcular = document.querySelector('button');
-
-  const boton = document.getElementById('botonCalcular');
-  let contador = 0;
-
-  // evento
-  boton.addEventListener('click', () => {
   
-  contador++;
-
-  console.log(`El botón ha sido clickeado ${contador} veces`);
-});
-
-  // evento para el botón de cálculo
-  botonCalcular.addEventListener('click', () => { 
+  // Agregamos un controlador de eventos para el botón de cálculo
+  botonCalcular.addEventListener('click', () => {
   let plata = plataInput.value; 
 
-  
+
+  // Limpiamos la tabla de productos
 productosTabla.innerHTML = '';
 
-// calculamos la mejor opción de compra
+// Calculamos la mejor opción de compra
 let mejorProducto = productos[0];
 let mtsMejorProducto = 0;
 
@@ -63,7 +54,9 @@ for (let i = 0; i < productos.length; i++) {
   let cocienteEntero = Math.floor(cociente);
   mts = mts.toFixed(2);
 
-// actualizamos la tabla de productos
+ 
+
+// Actualizamos la tabla de productos
 if (!productosTabla.querySelector('thead')) {
   let encabezado = document.createElement('thead');
   encabezado.innerHTML = `
@@ -88,7 +81,7 @@ fila.innerHTML = `
 `;
 productosTabla.appendChild(fila);
 
-  // verificamos si esta opción es la mejor
+  // Verificamos si esta opción es la mejor
   if (plata >= productos[i].valor) {
     if (mts > mtsMejorProducto) {
       mejorProducto = productos[i];
@@ -98,26 +91,8 @@ productosTabla.appendChild(fila);
 
 }
 
-// actualizamos el texto que muestra la mejor opción de compra
+// Actualizamos el texto que muestra la mejor opción de compra
 mejorProductoTexto.innerHTML = `
   La mejor opción de compra es ${mejorProducto.nombre}, que te permitirá cubrir un área de ${mtsMejorProducto} m<sup>2</sup>.
 `;
 })
-
-//localstorage
-
-const inputNombre = document.getElementById('nombre');
-const botonGuardar = document.getElementById('guardar');
-const inputPlata = document.getElementById('plata');
-
-botonCalcular.addEventListener('click', () => {
-  const nombre = inputNombre.value;
-  localStorage.setItem('nombre', nombre);
-  
-});
-
-botonCalcular.addEventListener('click', () => {
-  const dineroPosee = inputPlata.value;
-  localStorage.setItem('plata', dineroPosee);
-});
-
