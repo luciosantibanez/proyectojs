@@ -1,123 +1,154 @@
-const productos = [
-  {
-  nombre: "Producto 1",
-  valor: 7,
-  mts: 3 * 2,
-  madera: "mdf",
-  grosor: 0.3
-  },
-  {
-  nombre: "Producto 2",
-  valor: 15,
-  mts: 4 * 5,
-  madera: "mdf",
-  grosor: 0.15
-  },
-  {
-  nombre: "Producto 3",
-  valor: 12,
-  mts: 2 * 4,
-  madera: "pino",
-  grosor: 0.4
-  },
-  {
-  nombre: "Producto 4",
-  valor: 20,
-  mts: 5 * 4,
-  madera: "cedro",
-  grosor: 0.2
-  }
-  ];
-  
-  // referencias
-  const plataInput = document.getElementById('plata');
-  const mejorProductoTexto = document.getElementById('mejorProductoTexto');
-  const productosTabla = document.getElementById('productosTabla');
-  const botonCalcular = document.querySelector('button');
+let carritoVisible = false;
 
-  const boton = document.getElementById('botonCalcular');
-  let contador = 0;
+if(document.readyState=="loading"){
+    document.addEventListener("DOMContentLoaded", ready)
 
-  // evento
-  boton.addEventListener('click', () => {
-  
-  contador++;
-
-  console.log(`El botón ha sido clickeado ${contador} veces`);
-});
-
-  // evento para el botón de cálculo
-  botonCalcular.addEventListener('click', () => { 
-  let plata = plataInput.value; 
-
-  
-productosTabla.innerHTML = '';
-
-// calculamos la mejor opción de compra
-let mejorProducto = productos[0];
-let mtsMejorProducto = 0;
-
-for (let i = 0; i < productos.length; i++) {
-  let cociente = plata / productos[i].valor;
-  let mts = cociente * productos[i].mts;
-  let cocienteEntero = Math.floor(cociente);
-  mts = mts.toFixed(2);
-
-// actualizamos la tabla de productos
-if (!productosTabla.querySelector('thead')) {
-  let encabezado = document.createElement('thead');
-  encabezado.innerHTML = `
-    <tr>
-      <th>Nombre</th>
-      <th>Valor</th>
-      <th>Metros cuadrados</th>
-      <th>Tipo de madera</th>
-      <th>Grosor</th>
-    </tr>
-  `;
-  productosTabla.appendChild(encabezado);
+}else{
+    ready();
 }
 
-let fila = document.createElement('tr');
-fila.innerHTML = `
-  <td>${productos[i].nombre}</td>
-  <td>$${productos[i].valor}</td>
-  <td>${productos[i].mts} m<sup>2</sup></td>
-  <td>${productos[i].madera}</td>
-  <td>${productos[i].grosor}</td>
-`;
-productosTabla.appendChild(fila);
+function ready(){
 
-  // verificamos si esta opción es la mejor
-  if (plata >= productos[i].valor) {
-    if (mts > mtsMejorProducto) {
-      mejorProducto = productos[i];
-      mtsMejorProducto = mts;
+const btnEliminarItem = document.getElementsByClassName("btnEliminar")
+for(let i=0; i < btnEliminarItem.length; i++){
+    let btn = btnEliminarItem[i];
+    btn.addEventListener('click', eliminarItemCarrito)
     }
-  }
+    //boton sumar
+    let btnSumar = document.getElementsByClassName("sumar");
+    for(let i=0; i < btnSumar.length; i++){
+        let btn = btnSumar[i];
+        btn.addEventListener("click", sumarCantidad);
+    }
+
+    //boton restar
+    let btnRestar = document.getElementsByClassName("restar");
+    for(let i=0; i < btnRestar.length; i++){
+        let btn = btnRestar[i];
+        btn.addEventListener("click", restarCantidad);
+    }
+
+    //agregar al carro
+    let btnAgregarAlCarrito = document.getElementsByClassName("btnItem");
+    for(let i=0; i < btnAgregarAlCarrito.length; i++){
+        let btn= btnAgregarAlCarrito[i];
+        btn.addEventListener("click", agregarAlCarritoClick);
+
+    }
 
 }
 
-// actualizamos el texto que muestra la mejor opción de compra
-mejorProductoTexto.innerHTML = `
-  La mejor opción de compra es ${mejorProducto.nombre}, que te permitirá cubrir un área de ${mtsMejorProducto} m<sup>2</sup>.
-`;
-})
 
-//localstorage
+function eliminarItemCarrito(event){
+    let btnClick = event.target;
+    btnClick.parentElement.remove();
+    
+    actualizarPrecioTotal();
 
-const inputNombre = document.getElementById('nombre');
-const botonGuardar = document.getElementById('guardar');
-const inputPlata = document.getElementById('plata');
+    ocultarCarrito();
 
-botonCalcular.addEventListener('click', () => {
-  const nombre = inputNombre.value;
-  localStorage.setItem('nombre', nombre);
-  
-});
+}
 
-botonCalcular.addEventListener('click', () => {
-  const dineroPosee = inputPlata.value;
-  localStorage.setItem('plata', dineroPosee);
-});
+function actualizarPrecioTotal(){
+    let carritoContenedor = document.getElementsByClassName("carrito")[0];
+    let carritoItem = carritoContenedor.getElementsByClassName("carritoItem");
+    let total = 0;
+
+    for(let i=0; i < carritoItem.length; i++){
+        let item = carritoItem[i];
+        let precioElemento = item.getElementsByClassName("carritoItemPrecio")[0];
+        let precio = parseFloat(precioElemento.innerText.replace("$","").replace(".",""));
+        console.log(precio)
+        let cantidadItem = item.getElementsByClassName("carritoItemCantidad")[0];
+        let cantidad = cantidadItem.value 
+        console.log(cantidad);
+        total = total + (precio * cantidad);
+   }
+   total = Math.round(total*100)/100;
+   document.getElementsByClassName("carritoPrecioTotal")[0].innerText = "$"+ total;
+}
+
+function ocultarCarrito (){
+    let carritoItems = document.getElementsByClassName("carritoItems")[0];
+    if(carritoItems.childElementCount==0){
+        let carrito = document.getElementsByClassName("carrito")[0];
+        carrito.style.marginRigth = "-100%";
+        carrito.style.opacity="0";
+        carritoVisible = false;
+
+
+        let items = document.getElementsByClassName("contenedorItems")[0];
+        items.style.width="100%";
+
+    }
+}
+
+function sumarCantidad(event){
+    let btnClick = event.target;
+    let selector = btnClick.parentElement;
+    let cantidadActual = selector.getElementsByClassName("carritoItemCantidad")[0].value;
+    cantidadActual++;
+    selector.getElementsByClassName("carritoItemCantidad")[0].value = cantidadActual;
+
+    actualizarPrecioTotal();
+}
+
+function restarCantidad(event){
+    let btnClick = event.target;
+    let selector = btnClick.parentElement;
+    let cantidadActual = selector.getElementsByClassName("carritoItemCantidad")[0].value;
+    cantidadActual--;
+
+    if(cantidadActual >=1){
+        selector.getElementsByClassName("carritoItemCantidad")[0].value = cantidadActual;
+        actualizarPrecioTotal();
+    }
+}
+
+function agregarAlCarritoClick(event){
+    let btn = event.target;
+    let item = btn.parentElement;
+    let titulo = item.getElementsByClassName("tituloItem")[0].innerText;
+    console.log(titulo)
+    let precio = item.getElementsByClassName("precioItem")[0].innerText;
+    let imgSrc = item.getElementsByClassName("imgItem")[0].scr;
+
+    agregarItemAlCarrito(titulo, precio, imgSrc);
+}
+
+function agregarItemAlCarrito(titulo,precio,imgSrc){
+    let item = document.createElement("div");
+    item.classList.add = "items";
+    let itemsCarrito = document.getElementsByClassName("carritoItem")[0];
+
+    let nombresItemCarrito = itemsCarrito.getElementsByClassName("carritoItemTitulo");
+    for(let i=0; 0 < nombresItemCarrito.length; i++){
+        if(nombresItemCarrito[i].innerText==titulo){
+            alert("El item ya se encuentra en el carrito");
+            return;
+        }
+    }
+
+    let itemCarritoContenido = `
+    <div class="carritoItem">
+        <img src="./img/escritorioClaro.png" alt="" width="80px">
+    <div class="carritoItemDetalles">
+      <span class="carritoItemTitulo">Escritorio Melamina</span>
+        <div class="selectorCantidad">
+          <i class="fa-solid fa-minus restar"></i>
+          <input type="text" value="1" class="carritoItemCantidad" disabled>
+          <i class="fa-solid fa-plus sumar"></i>
+        </div>
+        <span class="carritoItemPrecio">$26.000</span>
+    </div>
+    `
+    item.innerHTML = itemCarritoContenido;
+    itemsCarrito.append(item);
+
+}
+
+fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error))
 

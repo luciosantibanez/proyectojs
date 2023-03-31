@@ -4,65 +4,169 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./img/icons8-calculadora-16.png" type="image/x-icon">
-    <title>Tabla multiplicar | proyecto</title>
+    <title>ErgoTech</title>
 </head>
 <body>
-    <h1>Calculadora de productos</h1>
-    <form>
-      <label for="nombre">Nombre cliente</label>
-      <input type="text" id="nombre">
+    <header>
+      <div class="container">
+        <div class="logo">
 
-      <label for="plata">Dinero disponible:</label>
-      <input type="number" placeholder="Danos tu dinero" id="plata" name="plata" required>
+          <h2>Ergo<span>Tech</span></h2>
+          <img src="./img/icons8-desk-64.png" alt="">
+        </div>
+
+        <nav class="links">
+          <ul>
+            <li><a href="">Nosotros</a></li>
+            <li><a href="">Trabajos</a></li>
+            <li><a href="">Mas info</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="imgHero">
+      <div class="textHero">
+          
+      </div>
+    </section>
+
+    <section class="contenedor">
+      <div class="contenedorItems">
+      <div class="item">
+        <div class="tituloItem">Escritorio Melamina Claro</div>
+        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
+        <span class="precioItem">$26.000</span>
+        <button class="btnItem">Agregar al carrito</button>
+      </div>
+      <div class="item">
+        <div class="tituloItem">Escritorio Melamina Claro</div>
+        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
+        <span class="precioItem">$26.000</span>
+        <button class="btnItem">Agregar al carrito</button>
+      </div>
+      <div class="item">
+        <div class="tituloItem">Escritorio Melamina Claro</div>
+        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
+        <span class="precioItem">$26.000</span>
+        <button class="btnItem">Agregar al carrito</button>
+      </div>
+      <div class="item">
+        <div class="tituloItem">Escritorio Melamina Claro</div>
+        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
+        <span class="precioItem">$26.000</span>
+        <button class="btnItem">Agregar al carrito</button>
+      </div>
+      <div class="item">
+        <div class="tituloItem">Escritorio Melamina Claro</div>
+        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
+        <span class="precioItem">$26.000</span>
+        <button class="btnItem">Agregar al carrito</button>
+      </div>
+      <div class="item">
+        <div class="tituloItem">Escritorio Melamina Claro</div>
+        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
+        <span class="precioItem">$26.000</span>
+        <button class="btnItem">Agregar al carrito</button>
+      </div>
+
+      <div class="item">
+        <div class="tituloItem">Melamina Oscuro</div>
+        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
+        <span class="precioItem">$26.000</span>
+        <button class="btnItem">Agregar al carrito</button>
+      </div>
+
+      <div class="item">
+        <div class="tituloItem">Melamina Negro</div>
+        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
+        <span class="precioItem">$26.000</span>
+        <button class="btnItem">Agregar al carrito</button>
+      </div>
+
+      <div class="item">
+        <div class="tituloItem">Melamina</div>
+        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
+        <span class="precioItem">$26.000</span>
+        <button class="btnItem">Agregar al carrito</button>
+      </div>
+      </div>
+    
+
+    <!-- carrito de compras -->
+
+    <div class="carrito">
+      <div class="headerCarrito">
+        <h2>Tus selecciones</h2>
+      </div>
+
+      <div class="carritoItems">
+        <div class="carritoItem">
+          <img src="./img/escritorioClaro.png" alt="" width="80px">
+          <div class="carritoItemDetalles">
+            <span class="carritoItemTitulo">Escritorio Melamina</span>
+              <div class="selectorCantidad">
+                <i class="fa-solid fa-minus restar"></i>
+                <input type="text" value="1" class="carritoItemCantidad" disabled>
+                <i class="fa-solid fa-plus sumar"></i>
+              </div>
+              <span class="carritoItemPrecio">$26.000</span>
+          </div>
+
+          <span class="btnEliminar">
+            <i class="fa-solid fa-trash"></i>
+          </span>
+        </div>
       
-      <button type="button" id="botonCalcular">Calcular</button>
-      
-    </form>
-    <table id="productosTabla">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Valor</th>
-          <th>Metros cuadrados</th>
-          <th>Tipo de madera</th>
-          <th>Grosor</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Producto 1</td>
-          <td>$7</td>
-          <td>6 m<sup>2</sup></td>
-          <td>mdf</td>
-          <td>0.3</td>
-        </tr>
-        <tr>
-          <td>Producto 2</td>
-          <td>$15</td>
-          <td>20 m<sup>2</sup></td>
-          <td>mdf</td>
-          <td>0.15</td>
-        </tr>
-        <tr>
-          <td>Producto 3</td>
-          <td>$12</td>
-          <td>8 m<sup>2</sup></td>
-          <td>pino</td>
-          <td>0.4</td>
-        </tr>
-        <tr>
-          <td>Producto 4</td>
-          <td>$20</td>
-          <td>20 m<sup>2</sup></td>
-          <td>cedro</td>
-          <td>0.2</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>Mejor producto: <span id="mejorProductoTexto"></span></p>
-    <p id="noAlcanza"></p>
-    <script src="./js/main.js"></script>
+        <div class="carritoItem">
+          <img src="./img/escritorio.png" alt="" width="80px">
+          <div class="carritoItemDetalles">
+            <span class="carritoItemTitulo">Escritorio Melamina</span>
+              <div class="selectorCantidad">
+                <i class="fa-solid fa-minus restar"></i>
+                <input type="text" value="2" class="carritoItemCantidad" disabled>
+                <i class="fa-solid fa-plus sumar"></i>
+              </div>
+              <span class="carritoItemPrecio">$26.000</span>
+          </div>
+
+          <span class="btnEliminar">
+            <i class="fa-solid fa-trash"></i>
+          </span>
+        </div>
+
+      </div>
+
+      <div class="carritoTotal">
+        <div class="fila">
+          <p>Total</p>
+          <span class="carritoPrecioTotal">
+            $120.000
+          </span> 
+        </div>
+
+        <button class="btnPagar">Pagar <i class="fa-solid fa-bag-shopping"></i></button>
+        
+      </div>
+    </div>
+  </section>
+
+ 
+
+
+    
+  
+  
+  
+  
+  
+  
+  <script src="./js/main.js"></script>
 </body>
 </html>
