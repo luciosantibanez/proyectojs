@@ -197,11 +197,24 @@ function actualizarTotalCarrito(){
 }
 
 
-
-
+    const tbody = document.querySelector('#table tbody');
 
 fetch("https://www.dolarsi.com/api/api.php?type=valoresprincipales")
   .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error))
+  .then(data => {
+    data.forEach(obj => {
+      const row = document.createElement('tr');
+      const currency = document.createElement('td');
+      const buy = document.createElement('td');
+      const sell = document.createElement('td');
+      currency.textContent = obj.casa.nombre;
+      buy.textContent = obj.casa.compra;
+      sell.textContent = obj.casa.venta;
+      row.appendChild(currency);
+      row.appendChild(buy);
+      row.appendChild(sell);
+      tbody.appendChild(row);
+    });
+  })
+  .catch(error => console.error(error));
 

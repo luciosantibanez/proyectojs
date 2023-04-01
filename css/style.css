@@ -288,6 +288,18 @@ footer{
     font-size: 20px;
   }
 
+  .api{
+    display: flex;
+    height: auto;
+    width: auto;
+    border: 1px solid black;
+    justify-content: center;
+    margin: 10px 0 0px 0px;
+  }
+
+  .table{
+  }
+
 
     /* mediaquerys */
     @media screen and (max-width:1300px) {
