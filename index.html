@@ -4,169 +4,123 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="./img/icons8-calculadora-16.png" type="image/x-icon">
-    <title>ErgoTech</title>
+    <title>ErgTECH</title>
 </head>
 <body>
-    <header>
-      <div class="container">
-        <div class="logo">
-
-          <h2>Ergo<span>Tech</span></h2>
-          <img src="./img/icons8-desk-64.png" alt="">
-        </div>
-
-        <nav class="links">
-          <ul>
-            <li><a href="">Nosotros</a></li>
-            <li><a href="">Trabajos</a></li>
-            <li><a href="">Mas info</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <section class="imgHero">
-      <div class="textHero">
-          
-      </div>
-    </section>
-
-    <section class="contenedor">
-      <div class="contenedorItems">
-      <div class="item">
-        <div class="tituloItem">Escritorio Melamina Claro</div>
-        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
-        <span class="precioItem">$26.000</span>
-        <button class="btnItem">Agregar al carrito</button>
-      </div>
-      <div class="item">
-        <div class="tituloItem">Escritorio Melamina Claro</div>
-        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
-        <span class="precioItem">$26.000</span>
-        <button class="btnItem">Agregar al carrito</button>
-      </div>
-      <div class="item">
-        <div class="tituloItem">Escritorio Melamina Claro</div>
-        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
-        <span class="precioItem">$26.000</span>
-        <button class="btnItem">Agregar al carrito</button>
-      </div>
-      <div class="item">
-        <div class="tituloItem">Escritorio Melamina Claro</div>
-        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
-        <span class="precioItem">$26.000</span>
-        <button class="btnItem">Agregar al carrito</button>
-      </div>
-      <div class="item">
-        <div class="tituloItem">Escritorio Melamina Claro</div>
-        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
-        <span class="precioItem">$26.000</span>
-        <button class="btnItem">Agregar al carrito</button>
-      </div>
-      <div class="item">
-        <div class="tituloItem">Escritorio Melamina Claro</div>
-        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
-        <span class="precioItem">$26.000</span>
-        <button class="btnItem">Agregar al carrito</button>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h2>Ergo<span>Tech</span></h2>
+        <img src="./img/icons8-desk-64.png" alt="">
       </div>
 
-      <div class="item">
-        <div class="tituloItem">Melamina Oscuro</div>
-        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
-        <span class="precioItem">$26.000</span>
-        <button class="btnItem">Agregar al carrito</button>
-      </div>
+      <nav class="links">
+        <ul>
+          <li><a href="">Nosotros</a></li>
+          <li><a href="#trabajos">Productos</a></li>
+          <li><a href="">Mas info</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-      <div class="item">
-        <div class="tituloItem">Melamina Negro</div>
-        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
-        <span class="precioItem">$26.000</span>
-        <button class="btnItem">Agregar al carrito</button>
-      </div>
-
-      <div class="item">
-        <div class="tituloItem">Melamina</div>
-        <img src="./img/escritorioClaro.png" alt="" class="imgItem">
-        <span class="precioItem">$26.000</span>
-        <button class="btnItem">Agregar al carrito</button>
-      </div>
-      </div>
-    
-
-    <!-- carrito de compras -->
-
-    <div class="carrito">
-      <div class="headerCarrito">
-        <h2>Tus selecciones</h2>
-      </div>
-
-      <div class="carritoItems">
-        <div class="carritoItem">
-          <img src="./img/escritorioClaro.png" alt="" width="80px">
-          <div class="carritoItemDetalles">
-            <span class="carritoItemTitulo">Escritorio Melamina</span>
-              <div class="selectorCantidad">
-                <i class="fa-solid fa-minus restar"></i>
-                <input type="text" value="1" class="carritoItemCantidad" disabled>
-                <i class="fa-solid fa-plus sumar"></i>
-              </div>
-              <span class="carritoItemPrecio">$26.000</span>
-          </div>
-
-          <span class="btnEliminar">
-            <i class="fa-solid fa-trash"></i>
-          </span>
-        </div>
-      
-        <div class="carritoItem">
-          <img src="./img/escritorio.png" alt="" width="80px">
-          <div class="carritoItemDetalles">
-            <span class="carritoItemTitulo">Escritorio Melamina</span>
-              <div class="selectorCantidad">
-                <i class="fa-solid fa-minus restar"></i>
-                <input type="text" value="2" class="carritoItemCantidad" disabled>
-                <i class="fa-solid fa-plus sumar"></i>
-              </div>
-              <span class="carritoItemPrecio">$26.000</span>
-          </div>
-
-          <span class="btnEliminar">
-            <i class="fa-solid fa-trash"></i>
-          </span>
-        </div>
-
-      </div>
-
-      <div class="carritoTotal">
-        <div class="fila">
-          <p>Total</p>
-          <span class="carritoPrecioTotal">
-            $120.000
-          </span> 
-        </div>
-
-        <button class="btnPagar">Pagar <i class="fa-solid fa-bag-shopping"></i></button>
-        
-      </div>
+  <section class="imgHero">
+    <div class="textHero">
+        <h1>Mejora tu rendimiento y tu bienestar con nuestros escritorios ergonómicos de alta calidad</h1>
     </div>
   </section>
 
- 
+  
+    <section class="contenedor">
+        <!-- Contenedor de elementos -->
+        <div class="contenedorItems" id="trabajos">
+            <div class="item">
+                <span class="tituloItem">Escritorio Clare</span>
+                <img src="img/escritorioClaro.png" alt="" class="imgItem">
+                <span class="precioItem">$15.000</span>
+                <button class="btnItem">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="tituloItem">Escritorio Dark</span>
+                <img src="img/escritorioOscuro.png" alt="" class="imgItem">
+                <span class="precioItem">$25.000</span>
+                <button class="btnItem">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="tituloItem">Escritorio Nap</span>
+                <img src="img/escritorio.png" alt="" class="imgItem">
+                <span class="precioItem">$35.000</span>
+                <button class="btnItem">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="tituloItem">Escritorio Waite</span>
+                <img src="img/escritorioPieBlanco.webp" alt="" class="imgItem">
+                <span class="precioItem">$18.000</span>
+                <button class="btnItem">Agregar al Carrito</button>
+            </div>
+        </div>
 
+        <!-- Carrito de Compras -->
+        <div class="carrito" id="carrito">
+            <div class="headerCarrito">
+                <h2>Tu Carrito</h2>
+            </div>
 
-    
-  
-  
-  
-  
-  
-  
-  <script src="./js/main.js"></script>
+            <div class="carritoItems">
+               
+              <!-- <div class="carritoItem">
+                    <img src="img/escritorioClaro.png" width="80px" alt="">
+                    <div class="carritoItemDetalles">
+                        <span class="carritoItemTitulo">Box Engasse</span>
+                        <div class="selectorCantidad">
+                            <i class="fa-solid fa-minus restarCantidad"></i>
+                            <input type="text" value="1" class="carritoItemCantidad" disabled>
+                            <i class="fa-solid fa-plus sumarCantidad"></i>
+                        </div>
+                        <span class="carritoItemPrecio">$15.000,00</span>
+                    </div>
+                   <span class="btnEliminar">
+                        <i class="fa-solid fa-trash"></i>
+                   </span>
+                </div>
+                <div class="carritoItem">
+                    <img src="img/escritorioOscuro.png" width="80px" alt="">
+                    <div class="carritoItemDetalles">
+                        <span class="carritoItemTitulo">Skin Glam</span>
+                        <div class="selectorCantidad">
+                            <i class="fa-solid fa-minus restarCantidad"></i>
+                            <input type="text" value="3" class="carritoItemCantidad" disabled>
+                            <i class="fa-solid fa-plus sumarCantidad"></i>
+                        </div>
+                        <span class="carritoItemPrecio">$18.000,00</span>
+                    </div>
+                   <button class="btnEliminar">
+                        <i class="fa-solid fa-trash"></i>
+                   </button>
+                </div>
+                 -->
+
+            </div>
+            <div class="carritoTotal">
+                <div class="fila">
+                    <strong>Tu Total</strong>
+                    <span class="carritoPrecioTotal">
+                        $120.000,00
+                    </span>
+                </div>
+                <button class="btnPagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+            </div>
+        </div>
+    </section>
+    <footer>
+      <div class="derechos">
+        <p>All rigth reservaded <span>®</span> </p>
+      </div>
+    </footer>
+    <script src="./js/main.js" async></script>
 </body>
-</html>
+</html>     
